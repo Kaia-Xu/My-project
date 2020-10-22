@@ -1,0 +1,38 @@
+---
+title: "week6"
+output: html_document
+---
+
+0.隨機產生1到300的號碼，共300個
+
+```{r}
+as.integer(runif(200)*300)+1
+```
+
+1.產生亂數300個，平均5，標準差2的母體
+```{r}
+sample<-rnorm(300,5,2) ##母體##
+hist(sample)
+
+
+idx<-as.integer(runif(100)*300)+1  ##從0~1之間取100個亂數乘以300再+1##  
+s <- sample[idx]  ##s是從idx取出的100個樣本##  
+s.sum<-summary(s)  ##看s的4分位數和極大小值##  
+s.sum
+print(s)
+hist(s)  
+
+s.mean<-s.sum[4]   ##取s.sum的第四個數值(平均數)
+s.mean  
+
+s.sd<-(s)/sqrt(300)    ##標準差=s/母體數開根號
+print(s.sum[4])
+print("samp.mean")  
+print(s.mean)  
+print("samp sd")  
+print(s.sd)  
+s.confidence<-c(-1.96*s.sd,1.96*s.sd)+s.mean  
+s.confidence
+```
+
+myidx<-c(s)
