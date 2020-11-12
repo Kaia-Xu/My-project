@@ -1,0 +1,13 @@
+```{r}
+uu<-seq(0,1,length=100)
+uu<-uu[c(-1,-100)]
+z_scores<-qnorm(uu)
+pvalues<-pnorm(z_scores)
+plot(z_scores,pvalues,type="l"
+     xlab= "z-scores"
+     ylab="Probability"
+     xaxt="n"
+     main="CDF")
+axis(1,at=which(pvalues == pnorm(qnorm(0,2)) ),
+     labels=round(qnorm(0.2),2))
+```
