@@ -1,0 +1,26 @@
+---
+title: "week12-1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+mydata1<-read.csv("trees91x.csv",encoding="UTF-8")
+mydata1$`中文`<-factor(mydata1$`中文`)
+table(mydata1$`中文`)
+```
+
+```{r}
+paste0("a","b") #"a"+"b"="a`sep`b",sep=""
+paste0("a","b",collapse = "-------")
+paste0(c("a","b"),c(1,2))
+paste0(c("a","b"),c(1,2),collapse="<--->")
+print("---------")
+paste("a","b") #"a"+"b"="a`sep`b",sep=" "
+```
+
+- paste0 是 paste 的簡化版，paste裡面的參數sep預設為""
+- paste0() == paste( ,sep="")
