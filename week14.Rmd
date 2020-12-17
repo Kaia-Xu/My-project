@@ -1,0 +1,35 @@
+---
+title: "week14"
+output: html_document
+---
+
+```{r}
+library(DT)
+ms<-installed.packages()
+#view(ms)
+datatable(ms)
+```
+
+```{r}
+library(DT)
+ms<-installed.packages()
+#view(ms)
+fm<-data.frame(ms)
+fm2<-fm[,1:3]
+datatable(fm2)
+colnames(fm2)<-c("套件","路徑","版本")
+datatable(fm2,rownames = F )
+write.csv(fm2,file="c:/week14/foo.csv",row.names = F,col.names = T)
+#輸出成csv檔，檔名foo
+```
+
+```{r}
+fm4<-read.csv(file = "c:/week14/foo.csv",as.is = T)
+datatable(fm4)
+```
+
+```{r}
+fm4<-read.csv(file = "c:/week14/foo.csv",as.is = T)
+fm5<-fm4[order(fm4$`版本`),]
+datatable(fm5)
+```
