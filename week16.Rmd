@@ -1,0 +1,34 @@
+```{r}
+head(iris)
+levels(iris$Species)
+par(mfrow=c(1,2))
+plot(iris[,1],iris[,3],type="n")      
+text(iris[,1],iris[,3],cex=0.6)       
+plot(iris[,1],iris[,3],type="n") 
+text(iris[,1],iris[,3],iris.lab,cex=0.7)  
+```
+
+```{r}
+par(mfrow=c(1,1)) 
+pairs(iris)
+```
+
+```{r}
+par(mfrow=c(1,1)) 
+pairs(iris[,1:4])
+```
+
+```{r}
+pairs(iris[1:4],pch=21,bg=iris.lab)
+```
+
+```{r}
+pairs(iris[1:4],pch=21, bg=c("red", "green3", "blue")[unclass(iris$Species)])
+```
+
+```{r}
+rr<-runif(100)
+MS<-read.csv("mathstat.csv",header = T)
+qqplot(MS$maths,rr)
+```
+
